@@ -11,8 +11,15 @@
      <!-- Show this view if "show_read_products_html" property of AppComponent is true. -->
 
    <!-- Show this view if "show_read_products_html" property of AppComponent is true. -->
-   <app-read-products
-   *ngIf="show_read_products_html">
+
+<app-read-products
+*ngIf="show_read_products_html"
+(show_create_product_event)="showCreateProduct($event)"
+(show_read_one_product_event)="showReadOneProduct($event)">
 </app-read-products>
+<app-create-product
+*ngIf="show_create_product_html"
+(show_read_products_event)="showReadProducts($event)">
+</app-create-product>
  </div>
  <!-- /container -->
